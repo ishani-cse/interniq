@@ -15,6 +15,49 @@ app.get("/", (req, res) => {
   res.json({ message: "InternIQ Backend is working!" });
 });
 
+// ---------- Apify cache (saves credits) ----------
+// Same search = no new Apify run for 12 hours.
+// Also merges identical requests that arrive at the same time
+// (e.g. React dev double-render) into one Apify run.
+const CACHE_TTL_MS = 12 * 60 * 60 * 1000;
+const MAX_CACHE_ENTRIES = 200;
+const jobsCache = new Map(); // key -> { jobs, time }
+const pendingJobs = new Map(); // key -> Promise
+
+const getJobsCached = async ({ keyword, location, limit }) => {
+  const key = `${keyword}|${location}|${limit}`.trim().toLowerCase();
+
+  const hit = jobsCache.get(key);
+  if (hit && Date.now() - hit.time < CACHE_TTL_MS) {
+    return hit.jobs;
+  }
+
+  if (pendingJobs.has(key)) return pendingJobs.get(key);
+
+  const promise = (async () => {
+    try {
+      const jobs = await fetchLinkedInJobs({ keyword, location, limit });
+      // Don't cache empty results, so a bad run can be retried
+      if (jobs.length) {
+        if (jobsCache.size >= MAX_CACHE_ENTRIES) {
+          jobsCache.delete(jobsCache.keys().next().value);
+        }
+        jobsCache.set(key, { jobs, time: Date.now() });
+      }
+      return jobs;
+    } catch (error) {
+      // If Apify fails (e.g. no credits), serve older cached data if we have it
+      if (hit) return hit.jobs;
+      throw error;
+    } finally {
+      pendingJobs.delete(key);
+    }
+  })();
+
+  pendingJobs.set(key, promise);
+  return promise;
+};
+
 // Test route: Apify + LinkedIn jobs
 app.get("/api/test-jobs", async (req, res) => {
   try {
@@ -38,9 +81,9 @@ app.get("/api/test-jobs", async (req, res) => {
 app.get("/api/recommendations", async (req, res) => {
   try {
     const { q = "software intern", location = "India", limit = 10 } = req.query;
-    const jobs = await fetchLinkedInJobs({
-      keyword: q,
-      location,
+    const jobs = await getJobsCached({
+      keyword: String(q),
+      location: String(location),
       limit: Math.min(Number(limit) || 10, 25),
     });
     res.json({ success: true, count: jobs.length, jobs });
