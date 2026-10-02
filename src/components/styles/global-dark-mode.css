@@ -1,0 +1,326 @@
+/* ========== GLOBAL DARK MODE CSS ========== */
+
+:root {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9fafb;
+  --color-bg-tertiary: #f3f4f6;
+  --color-text-primary: #111827;
+  --color-text-secondary: #374151;
+  --color-text-tertiary: #6b7280;
+  --color-border: #e5e7eb;
+  --color-hover-bg: #f3f4f6;
+  --color-input-bg: #ffffff;
+  --color-input-border: #d1d5db;
+  --color-sidebar-bg: #ffffff;
+  --color-card-bg: #ffffff;
+}
+
+/* ========== DARK MODE ========== */
+html.dark-mode,
+html.dark-mode body {
+  --color-bg-primary: #111827;
+  --color-bg-secondary: #1f2937;
+  --color-bg-tertiary: #374151;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #d1d5db;
+  --color-text-tertiary: #9ca3af;
+  --color-border: #374151;
+  --color-hover-bg: #1f2937;
+  --color-input-bg: #2d3748;
+  --color-input-border: #4b5563;
+  --color-sidebar-bg: #111827;
+  --color-card-bg: #1f2937;
+}
+
+/* ========== GLOBAL STYLES ========== */
+* {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+html,
+body {
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+}
+
+html.dark-mode {
+  background-color: #1f2937;
+  color: var(--color-text-primary);
+}
+
+/*
+  NOTE: Every rule below is scoped to dark mode only using :where(html.dark-mode).
+  :where() adds no specificity, so dark mode looks exactly as before,
+  but light mode is no longer affected by these broad [class*="..."] rules.
+*/
+
+/* ========== SIDEBAR ========== */
+:where(html.dark-mode) .sidebar,
+:where(html.dark-mode) [class*="sidebar"],
+:where(html.dark-mode) [class*="Sidebar"],
+:where(html.dark-mode) .sidenav,
+:where(html.dark-mode) [class*="sidenav"] {
+  background-color: var(--color-sidebar-bg) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-primary) !important;
+}
+
+:where(html.dark-mode) .sidebar a,
+:where(html.dark-mode) .sidebar button,
+:where(html.dark-mode) [class*="sidebar"] a,
+:where(html.dark-mode) [class*="sidebar"] button,
+:where(html.dark-mode) [class*="Sidebar"] a,
+:where(html.dark-mode) [class*="Sidebar"] button {
+  color: var(--color-text-secondary) !important;
+}
+
+:where(html.dark-mode) .sidebar a:hover,
+:where(html.dark-mode) .sidebar button:hover,
+:where(html.dark-mode) [class*="sidebar"] a:hover,
+:where(html.dark-mode) [class*="sidebar"] button:hover,
+:where(html.dark-mode) [class*="Sidebar"] a:hover,
+:where(html.dark-mode) [class*="Sidebar"] button:hover,
+:where(html.dark-mode) .sidebar a.active,
+:where(html.dark-mode) .sidebar button.active,
+:where(html.dark-mode) [class*="sidebar"] a.active,
+:where(html.dark-mode) [class*="sidebar"] button.active {
+  background-color: var(--color-hover-bg) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* ========== NAVBAR / TOP NAV ========== */
+:where(html.dark-mode) .navbar,
+:where(html.dark-mode) .topnav,
+:where(html.dark-mode) .header,
+:where(html.dark-mode) [class*="navbar"],
+:where(html.dark-mode) [class*="topnav"],
+:where(html.dark-mode) [class*="header"],
+:where(html.dark-mode) [class*="TopNav"],
+:where(html.dark-mode) [class*="TopNavigation"] {
+  background-color: var(--color-bg-primary) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-primary) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+:where(html.dark-mode) .navbar a,
+:where(html.dark-mode) .navbar button,
+:where(html.dark-mode) .topnav a,
+:where(html.dark-mode) .topnav button,
+:where(html.dark-mode) .header a,
+:where(html.dark-mode) .header button,
+:where(html.dark-mode) [class*="navbar"] a,
+:where(html.dark-mode) [class*="navbar"] button,
+:where(html.dark-mode) [class*="topnav"] a,
+:where(html.dark-mode) [class*="topnav"] button {
+  color: var(--color-text-secondary) !important;
+}
+
+/* ========== CARDS ========== */
+:where(html.dark-mode) .card,
+:where(html.dark-mode) [class*="card"],
+:where(html.dark-mode) [class*="Card"] {
+  background-color: var(--color-card-bg) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* ========== MAIN CONTENT ========== */
+:where(html.dark-mode) main,
+:where(html.dark-mode) .main,
+:where(html.dark-mode) .content,
+:where(html.dark-mode) [class*="main"],
+:where(html.dark-mode) [class*="content"] {
+  background-color: var(--color-bg-secondary) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* ========== INPUTS ========== */
+:where(html.dark-mode) input,
+:where(html.dark-mode) textarea,
+:where(html.dark-mode) select {
+  background-color: var(--color-input-bg) !important;
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-input-border) !important;
+}
+
+:where(html.dark-mode) input::placeholder,
+:where(html.dark-mode) textarea::placeholder {
+  color: var(--color-text-tertiary) !important;
+}
+
+:where(html.dark-mode) input:focus,
+:where(html.dark-mode) textarea:focus,
+:where(html.dark-mode) select:focus {
+  border-color: #2563eb !important;
+  background-color: var(--color-input-bg) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* ========== BUTTONS ========== */
+button,
+a,
+[role="button"] {
+  color: var(--color-text-primary);
+  transition: all 0.2s ease;
+}
+
+/* ========== TEXT ========== */
+:where(html.dark-mode) h1,
+:where(html.dark-mode) h2,
+:where(html.dark-mode) h3,
+:where(html.dark-mode) h4,
+:where(html.dark-mode) h5,
+:where(html.dark-mode) h6,
+:where(html.dark-mode) .heading,
+:where(html.dark-mode) .title,
+:where(html.dark-mode) [class*="heading"],
+:where(html.dark-mode) [class*="title"] {
+  color: var(--color-text-primary) !important;
+}
+
+:where(html.dark-mode) p,
+:where(html.dark-mode) span,
+:where(html.dark-mode) .text,
+:where(html.dark-mode) [class*="text"] {
+  color: var(--color-text-primary) !important;
+}
+
+/* ========== BORDERS ========== */
+:where(html.dark-mode) .border,
+:where(html.dark-mode) hr,
+:where(html.dark-mode) [class*="border"] {
+  border-color: var(--color-border) !important;
+}
+
+/* ========== LINKS ========== */
+a {
+  color: #2563eb;
+}
+
+a:hover {
+  color: #1d4ed8;
+}
+
+html.dark-mode a:hover {
+  color: #60a5fa;
+}
+
+/* ========== HOVER STATES ========== */
+*:hover {
+  transition: all 0.2s ease;
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-tertiary);
+}
+
+/* ========== DROPDOWNS ========== */
+:where(html.dark-mode) select,
+:where(html.dark-mode) .dropdown,
+:where(html.dark-mode) [class*="dropdown"],
+:where(html.dark-mode) [class*="menu"] {
+  background-color: var(--color-input-bg) !important;
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-input-border) !important;
+}
+
+/* ========== MODALS / DIALOGS ========== */
+:where(html.dark-mode) .modal,
+:where(html.dark-mode) .dialog,
+:where(html.dark-mode) .popup,
+:where(html.dark-mode) [class*="modal"],
+:where(html.dark-mode) [class*="dialog"],
+:where(html.dark-mode) [class*="popup"] {
+  background-color: var(--color-bg-primary) !important;
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* ========== BADGES / TAGS ========== */
+:where(html.dark-mode) .badge,
+:where(html.dark-mode) .tag,
+:where(html.dark-mode) .label,
+:where(html.dark-mode) [class*="badge"],
+:where(html.dark-mode) [class*="tag"],
+:where(html.dark-mode) [class*="label"] {
+  background-color: var(--color-bg-tertiary) !important;
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-border) !important;
+}
+
+/* ========== TABLES ========== */
+:where(html.dark-mode) table,
+:where(html.dark-mode) .table,
+:where(html.dark-mode) [class*="table"] {
+  background-color: var(--color-card-bg) !important;
+  color: var(--color-text-primary) !important;
+  border-color: var(--color-border) !important;
+}
+
+:where(html.dark-mode) table th,
+:where(html.dark-mode) table td,
+:where(html.dark-mode) .table th,
+:where(html.dark-mode) .table td {
+  border-color: var(--color-border) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* ========== DISABLED STATES ========== */
+:disabled,
+[disabled],
+.disabled,
+[class*="disabled"] {
+  opacity: 0.5;
+}
+
+/* ========== ACTIVE STATES ========== */
+:where(html.dark-mode) .active,
+:where(html.dark-mode) [class*="active"],
+:where(html.dark-mode) [aria-current="true"] {
+  background-color: var(--color-hover-bg) !important;
+  color: var(--color-text-primary) !important;
+}
+
+/* ========== UTILITIES ========== */
+:where(html.dark-mode) .text-gray,
+:where(html.dark-mode) .text-secondary {
+  color: var(--color-text-secondary) !important;
+}
+
+:where(html.dark-mode) .text-light,
+:where(html.dark-mode) .text-tertiary {
+  color: var(--color-text-tertiary) !important;
+}
+
+:where(html.dark-mode) .bg-gray,
+:where(html.dark-mode) .bg-secondary {
+  background-color: var(--color-bg-secondary) !important;
+}
+
+:where(html.dark-mode) .bg-light,
+:where(html.dark-mode) .bg-tertiary {
+  background-color: var(--color-bg-tertiary) !important;
+}
+
+/* ========== OVERRIDE INLINE COLORS ========== */
+[style*="background-color"],
+[style*="color"],
+[style*="border-color"] {
+  /* Allow but don't force - CSS variables take precedence */
+}

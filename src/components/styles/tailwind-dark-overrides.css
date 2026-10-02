@@ -1,0 +1,314 @@
+/* ========== DARK MODE - FINAL COMPREHENSIVE FIX ========== */
+
+/* ROOT & BODY */
+html.dark-mode {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+html.dark-mode body {
+  background-color: #111827 !important;
+  color: #ffffff !important;
+}
+
+/* ALL BACKGROUNDS - MOST AGGRESSIVE */
+html.dark-mode * {
+  background-color: inherit !important;
+}
+
+html.dark-mode .bg-gray-50,
+html.dark-mode .bg-gray-100,
+html.dark-mode .bg-gray-200,
+html.dark-mode .bg-white {
+  background-color: #1f2937 !important;
+}
+
+/* TAILWIND GRADIENTS - CRITICAL FIX */
+html.dark-mode .bg-gradient-to-br,
+html.dark-mode .bg-gradient-to-r,
+html.dark-mode .bg-gradient-to-b,
+html.dark-mode .bg-gradient-to-t,
+html.dark-mode .bg-gradient-to-l,
+html.dark-mode [class*="bg-gradient"] {
+  background: linear-gradient(135deg, #1f2937 0%, #111827 100%) !important;
+}
+
+html.dark-mode .from-blue-50,
+html.dark-mode .from-indigo-100,
+html.dark-mode .from-blue-100,
+html.dark-mode .from-purple-50,
+html.dark-mode .to-indigo-100,
+html.dark-mode .to-blue-50,
+html.dark-mode .to-purple-100 {
+  background-color: transparent !important;
+}
+
+/* LIGHT COLOR BACKGROUNDS */
+html.dark-mode .bg-blue-50,
+html.dark-mode .bg-indigo-50,
+html.dark-mode .bg-indigo-100,
+html.dark-mode .bg-purple-50,
+html.dark-mode .bg-slate-50,
+html.dark-mode .bg-slate-100,
+html.dark-mode .bg-zinc-50,
+html.dark-mode .bg-stone-50 {
+  background-color: #1f2937 !important;
+}
+
+/* GREEN BACKGROUNDS (Resume success) */
+html.dark-mode .bg-green-50 {
+  background-color: #1f2937 !important;
+}
+
+html.dark-mode .bg-green-100 {
+  background-color: #1f2937 !important;
+}
+
+/* COLORED BACKGROUNDS FOR ICONS */
+html.dark-mode .bg-blue-100 {
+  background-color: #1f2937 !important;
+}
+
+html.dark-mode .bg-red-50,
+html.dark-mode .bg-red-100 {
+  background-color: #1f2937 !important;
+}
+
+html.dark-mode .bg-orange-50,
+html.dark-mode .bg-orange-100 {
+  background-color: #1f2937 !important;
+}
+
+html.dark-mode .bg-purple-100 {
+  background-color: #1f2937 !important;
+}
+
+/* TEXT COLORS */
+html.dark-mode .text-gray-900,
+html.dark-mode .text-gray-800,
+html.dark-mode .text-black {
+  color: #ffffff !important;
+}
+
+html.dark-mode .text-gray-700 {
+  color: #e5e7eb !important;
+}
+
+html.dark-mode .text-gray-600,
+html.dark-mode .text-gray-500 {
+  color: #d1d5db !important;
+}
+
+html.dark-mode .text-gray-400,
+html.dark-mode .text-gray-300 {
+  color: #9ca3af !important;
+}
+
+/* COLORED TEXT */
+html.dark-mode .text-blue-600,
+html.dark-mode .text-blue-700,
+html.dark-mode .text-blue-500 {
+  color: #60a5fa !important;
+}
+
+html.dark-mode .text-red-600,
+html.dark-mode .text-red-500 {
+  color: #ef5350 !important;
+}
+
+html.dark-mode .text-green-600,
+html.dark-mode .text-green-700 {
+  color: #4ade80 !important;
+}
+
+html.dark-mode .text-orange-600 {
+  color: #fb923c !important;
+}
+
+html.dark-mode .text-indigo-700 {
+  color: #818cf8 !important;
+}
+
+html.dark-mode .text-purple-600 {
+  color: #a78bfa !important;
+}
+
+/* BORDERS */
+html.dark-mode .border-gray-100,
+html.dark-mode .border-gray-200,
+html.dark-mode .border-gray-300,
+html.dark-mode .border-slate-100,
+html.dark-mode .border-slate-200,
+html.dark-mode .border-white {
+  border-color: #374151 !important;
+}
+
+html.dark-mode .border-blue-50,
+html.dark-mode .border-blue-100,
+html.dark-mode .border-green-100,
+html.dark-mode .border-red-100 {
+  border-color: #374151 !important;
+}
+
+/* HEADER */
+html.dark-mode header {
+  background-color: #111827 !important;
+  border-color: #374151 !important;
+  color: #ffffff !important;
+}
+
+html.dark-mode header * {
+  color: inherit !important;
+}
+
+/* SIDEBAR */
+html.dark-mode .w-64,
+html.dark-mode aside {
+  background-color: #111827 !important;
+  border-color: #374151 !important;
+}
+
+html.dark-mode .w-64 * {
+  color: inherit !important;
+}
+
+/* MAIN CONTENT */
+html.dark-mode main,
+html.dark-mode [role="main"] {
+  background-color: #111827 !important;
+}
+
+html.dark-mode .flex-1,
+html.dark-mode .flex-col {
+  background-color: inherit !important;
+}
+
+/* ALL CARDS */
+html.dark-mode .rounded-lg,
+html.dark-mode .rounded-xl,
+html.dark-mode .rounded-2xl,
+html.dark-mode [class*="rounded"] {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+  color: #ffffff !important;
+}
+
+/* INPUTS */
+html.dark-mode input,
+html.dark-mode textarea,
+html.dark-mode select {
+  background-color: #2d3748 !important;
+  color: #ffffff !important;
+  border-color: #4b5563 !important;
+}
+
+html.dark-mode input::placeholder,
+html.dark-mode textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+html.dark-mode input:focus,
+html.dark-mode textarea:focus,
+html.dark-mode select:focus {
+  border-color: #2563eb !important;
+}
+
+/* BUTTONS */
+html.dark-mode .bg-blue-600,
+html.dark-mode .bg-blue-500 {
+  background-color: #2563eb !important;
+}
+
+html.dark-mode button:not([class*="bg-blue"]):not([class*="bg-red"]):not([class*="bg-green"]) {
+  background-color: #374151 !important;
+  color: #ffffff !important;
+}
+
+/* BLUE CLASSES - KEEP BLUE */
+html.dark-mode .text-blue-600,
+html.dark-mode .text-blue-500 {
+  color: #60a5fa !important;
+}
+
+html.dark-mode .hover\:text-blue-600:hover,
+html.dark-mode .hover\:text-blue-700:hover {
+  color: #93c5fd !important;
+}
+
+/* LINKS */
+html.dark-mode a {
+  color: #60a5fa !important;
+}
+
+html.dark-mode a:hover {
+  color: #93c5fd !important;
+}
+
+/* HOVER EFFECTS */
+html.dark-mode .hover\:bg-gray-50:hover,
+html.dark-mode .hover\:text-gray-700:hover {
+  background-color: #1f2937 !important;
+  color: #d1d5db !important;
+}
+
+html.dark-mode button:hover:not([class*="bg-blue"]) {
+  background-color: #374151 !important;
+}
+
+/* SHADOWS */
+html.dark-mode .shadow,
+html.dark-mode .shadow-md,
+html.dark-mode .shadow-lg,
+html.dark-mode .shadow-sm {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* INLINE STYLES - NUCLEAR OPTION */
+html.dark-mode div[style*="white"],
+html.dark-mode div[style*="rgb(255"],
+html.dark-mode [style*="background-color: white"],
+html.dark-mode [style*="backgroundColor: white"] {
+  background-color: #1f2937 !important;
+}
+
+/* TRANSITIONS */
+html.dark-mode * {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* TABS & NAVIGATION */
+html.dark-mode .tab,
+html.dark-mode [role="tab"] {
+  background-color: transparent !important;
+  color: #d1d5db !important;
+}
+
+html.dark-mode .tab-active,
+html.dark-mode [role="tab"][aria-selected="true"] {
+  color: #ffffff !important;
+  border-color: #2563eb !important;
+}
+
+/* BADGES & TAGS */
+html.dark-mode .badge,
+html.dark-mode .tag {
+  background-color: #374151 !important;
+  color: #ffffff !important;
+}
+
+/* SPECIAL: Profile & Dashboard cards */
+html.dark-mode [class*="profile"],
+html.dark-mode [class*="dashboard"],
+html.dark-mode [class*="container"] {
+  background-color: inherit !important;
+  color: #ffffff !important;
+}
+
+/* SVG FIXES */
+html.dark-mode svg {
+  color: inherit !important;
+}
+
+html.dark-mode svg path {
+  fill: currentColor;
+}

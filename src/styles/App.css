@@ -1,0 +1,75 @@
+/* --- Global Styles --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* App.css mein line 16 badal kar ye likhein: */
+.app {
+  width: 100%;
+  min-height: 100vh; /* 'min-h-screen' ki jagah ye aayega */
+  background: #f8fafc;
+}
+
+/* --- Landing Page Sections --- */
+.section {
+  scroll-margin-top: 80px;
+  padding: 80px 0; /* Standard section spacing */
+}
+
+.section-white {
+  background: #ffffff;
+}
+
+.section-gray {
+  background: #f8fafc;
+}
+
+.section-blue {
+  background: #2563eb;
+}
+
+/* --- Container Fix --- */
+/* Ye class sirf Landing Page ke components mein use karein. 
+   Dashboard mein Tailwind ki 'max-w-7xl' use ho rahi hai isliye wo bikhrega nahi. */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* --- Modal Styles (Improved) --- */
+.modal {
+  position: fixed;
+  inset: 0; /* top, left, right, bottom: 0 */
+  z-index: 2000;
+  background: rgba(15, 23, 42, 0.6); /* Modern glass-morphism effect */
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Utilities --- */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
